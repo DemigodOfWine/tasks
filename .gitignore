@@ -1,0 +1,8 @@
+__pycache__
+venv
+env
+Pipfile
+Pipfile.lock
+*.bak
+*.sqlite3
+.idea

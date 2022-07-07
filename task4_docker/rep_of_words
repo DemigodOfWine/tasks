@@ -1,0 +1,4 @@
+#!/bin/bash
+mkdir -p $2
+touch $(sed -e  's/[^A-Z a-z]/ /g' $1 | tr 'A-Z' 'a-z' | tr ' ' '\n' | grep -v '^$'| sort | uniq -c | sort -rn | head -n 10 | awk '{print "'$2'" text $2 "_"  text $1}' | tr '\n' ' ' )
+#touch $(sed -e  's/[^A-Za-z]/ /g' | tr 'A-Z' 'a-z' | tr ' ' '\n' | grep -v '^$'| sort | uniq -c | sort -rn | head -n 10 | awk '{print $2 "_"  text $1}' | tr '\n' ' ')
